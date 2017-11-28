@@ -1,0 +1,26 @@
+.pexea12-hv-container {
+  position:fixed; 
+  width: 200px; 
+  z-index: 1000; 
+  background-color: #d2d2d1; 
+  right: 0; 
+  top: 10px;
+  color: #090950
+}
+
+.pexea12-hv-letter {
+  font-size: 50px;
+  text-align: center;
+}
+
+.pexea12-hv-pronunciation, .pexea12-hv-meaning {
+  padding: 10px;
+}
+
+.pexea12-hv-pronunciation span {
+  font-weight: bold;
+}
+
+.pexea12-hv-strokes {
+  text-align: center;
+}

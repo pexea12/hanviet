@@ -1,14 +1,16 @@
-<!DOCTYPE html> 
-<html>
-  <head>
-    <script src="popup.js"></script>
-    <style>
-      body { width: 300px; }
-      textarea { width: 250px; height: 100px;}
-    </style>
-  </head>
-  <body>
-    <textarea id="text"> </textarea>
-    <button type="button" id="paste">Paste Selection OK</button>
-  </body>
-</html>
+<div class="pexea12-hv-container">
+  <p class="pexea12-hv-letter">
+    ${ letter }
+  </p>
+  <p class="pexea12-hv-pronunciation">
+    <span>Pinyin:</span> 
+    ${ pinyin.join(', ') }
+  </p>
+  <p class="pexea12-hv-pronunciation">
+    <span>Hán Việt:</span>
+    ${ sinoViet.join(', ') }
+  </p>
+  <p class="pexea12-hv-strokes">
+      <img src="${ strokeImage }">
+  </p>
+</div>
