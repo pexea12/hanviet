@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "HanViet",
-  "description": "Search for the meaning, pinyin, Sino-Vietnamese sound and stroke order of a Chinese character",
+  "description": "Search for the Vietnamese meaning, pinyin, Sino-Vietnamese sound and stroke order of a Chinese character",
   "version": "0.1",
   "content_scripts": [
     {

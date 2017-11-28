@@ -1,34 +1,41 @@
-const fetchText = (text) => {
-  const getPinyin = fetch(`http://hvdic.thivien.net/wpy/${ text }`)
-    .then((res) => {
-      return res.text()
-    })
+const domain = 'http://hvdic.thivien.net'
+
+const getPinyin = (text) => {
+  return fetch(`http://hvdic.thivien.net/wpy/${ text }`)
+    .then(res => res.text())
     .then((data) => {
-      console.log(data)
+      const dom = document.createElement('html')
+      dom.innerHTML = data.replace('<!doctype html>', '')
+
+      const pinyin = Array.from(dom.querySelectorAll('.info .hvres-goto-link'))
+        .map(span => span.innerText)
+
+      const strokeImage = dom.querySelector('.hvres-animation .lazy').dataset.original
+
+      console.log(pinyin, strokeImage)
     })
+}
 
-  const getSino = fetch(`http://hvdic.thivien.net/whv/${ text }`) 
+const getSino = (text) => {
+  return fetch(`http://hvdic.thivien.net/whv/${ text }`) 
+    .then(res => res.text())
+    .then((data) => {
+      const dom = document.createElement('html')
+      dom.innerHTML = data.replace('<!doctype html>', '')
 
-  // return Promise.all([ getPinyin, getSino ])
-  //   .then((res) => {
-  //   })
-  //   .then((data) => {
-  //     const pinyinRes = document.createElement(data[0])
-  //     const sinoRes = document.createElement(data[1])
+      const sino = dom.querySelector('.hvres-meaning .hvres-goto-link').innerText
 
-  //     const pinyin = Array.from(
-  //         pinyinRes.querySelector('.info')
-  //           .getElementsByClassName('hvres-goto-link')
-  //       )
-  //       .map(span => span.innerHTML)
+      const meaning = dom.querySelector('.hvres-meaning.han-clickable').innerText
 
-  //     const strokeImage = pinyinRes
-  //       .querySelector('.hvres-animation')
-  //       .querySelector('.lazy')
-  //       .src
+      console.log(sino, meaning)
+    })
+}
 
-
-  //   })
+const fetchText = (text) => {
+  return Promise.all([ getPinyin(text), getSino(text) ])
+    .then(() => {
+      console.log('Done')
+    })
 }
 
 
