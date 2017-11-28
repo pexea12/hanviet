@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "HanViet",
+  "description": "Search for the meaning, pinyin, Sino-Vietnamese sound and stroke order of a Chinese character",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
