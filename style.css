@@ -17,6 +17,12 @@
   padding: 10px;
 }
 
+.pexea12-hv-meaning {
+  border: 1px solid black;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
 .pexea12-hv-pronunciation span {
   font-weight: bold;
 }
