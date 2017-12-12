@@ -30,7 +30,7 @@ const createTemplate = () => {
 
 
 const popup = createTemplate()
-// document.body.innerHTML += popup
+document.body.innerHTML += popup
 
 const container = document.querySelector('.pexea12-hv-container')
 const button = container.querySelector('.pexea12-hv-cancel')
@@ -46,30 +46,30 @@ const setTemplate = ({ letter, pinyin, sinoViet, strokeImage, meaning }) => {
 }
 
 
-// const toggleLoading = (on = true)  => {
-//   if (on) {
-//     loading.style.display = 'block'
-//     content.style.display = 'none'
-//   } else {
-//     loading.style.display = 'none'
-//     content.style.display = 'block'
-//   }
-// }
+const toggleLoading = (on = true)  => {
+  if (on) {
+    loading.style.display = 'block'
+    content.style.display = 'none'
+  } else {
+    loading.style.display = 'none'
+    content.style.display = 'block'
+  }
+}
 
-// document.addEventListener('mouseup', () => {
-//   const text = window.getSelection().toString().replace(/[\s\n]+/g, '')
+document.addEventListener('mouseup', () => {
+  const text = window.getSelection().toString().replace(/[\s\n]+/g, '')
 
-//   if (text.length === 1 && text[0] >= '\u3400' && text[0] <= '\u9FBF') {
-//     container.style.display = 'block'
+  if (text.length === 1 && text[0] >= '\u3400' && text[0] <= '\u9FBF') {
+    container.style.display = 'block'
 
-//     toggleLoading()
-//     chrome.runtime.sendMessage({ text }, (res) => {
-//       toggleLoading(false)
-//       setTemplate(res)
-//     })
-//   }
-// })
+    toggleLoading()
+    chrome.runtime.sendMessage({ text }, (res) => {
+      toggleLoading(false)
+      setTemplate(res)
+    })
+  }
+})
 
-// button.addEventListener('click', () => {
-//   container.style.display = 'none'
-// })
+button.addEventListener('click', () => {
+  container.style.display = 'none'
+})
