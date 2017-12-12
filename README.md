@@ -6,6 +6,8 @@
 
 ## How to use
 
+![HanViet manual](https://i.imgur.com/SGlIRNn.gif)
+
 ## Chrome Store
 
 ## Issues
