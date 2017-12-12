@@ -8,5 +8,8 @@
 
 ## Chrome Store
 
+## Issues
+[HanViet issues](https://github.com/pexea12/hanviet/issues)
+
 ## Credit
 [hvdic.thivien.net](hvdic.thivien.net)
