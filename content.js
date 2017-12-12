@@ -29,15 +29,7 @@ const createTemplate = () => {
 }
 
 
-const popup = createTemplate()
-document.body.innerHTML += popup
-
-const container = document.querySelector('.pexea12-hv-container')
-const button = container.querySelector('.pexea12-hv-cancel')
-const loading = container.querySelector('.pexea12-hv-loading')
-const content = container.querySelector('.pexea12-hv-content')
-
-const setTemplate = ({ letter, pinyin, sinoViet, strokeImage, meaning }) => {
+const setTemplate = (container, { letter, pinyin, sinoViet, strokeImage, meaning }) => {
   container.querySelector('.pexea12-hv-letter').innerText = letter 
   container.querySelector('.pexea12-hv-pinyin').innerText = pinyin.join(', ')
   container.querySelector('.pexea12-hv-sinoviet').innerText = sinoViet.join(', ')
@@ -46,7 +38,7 @@ const setTemplate = ({ letter, pinyin, sinoViet, strokeImage, meaning }) => {
 }
 
 
-const toggleLoading = (on = true)  => {
+const toggleLoading = (loading, content, on = true)  => {
   if (on) {
     loading.style.display = 'block'
     content.style.display = 'none'
@@ -60,16 +52,27 @@ document.addEventListener('mouseup', () => {
   const text = window.getSelection().toString().replace(/[\s\n]+/g, '')
 
   if (text.length === 1 && text[0] >= '\u3400' && text[0] <= '\u9FBF') {
+    let container = document.querySelector('.pexea12-hv-container')
+
+    if (!container) {
+      document.body.innerHTML = createTemplate() + document.body.innerHTML
+      container = document.querySelector('.pexea12-hv-container')
+    }
+
     container.style.display = 'block'
 
-    toggleLoading()
+    const loading = container.querySelector('.pexea12-hv-loading')
+    const content = container.querySelector('.pexea12-hv-content')
+    const button = container.querySelector('.pexea12-hv-cancel')
+
+    button.addEventListener('click', () => {
+      container.parentNode.removeChild(container)
+    })
+
+    toggleLoading(loading, content)
     chrome.runtime.sendMessage({ text }, (res) => {
-      toggleLoading(false)
-      setTemplate(res)
+      toggleLoading(loading, content, false)
+      setTemplate(container, res)
     })
   }
-})
-
-button.addEventListener('click', () => {
-  container.style.display = 'none'
 })
