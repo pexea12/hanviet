@@ -11,6 +11,10 @@
   display: none;
 }
 
+.pexea12-hv-content {
+  display: none;
+}
+
 .pexea12-hv-letter {
   margin: 40px 0px;
   font-size: 50px;
@@ -50,4 +54,26 @@
 
 .pexea12-hv-cancel a:hover {
   background-color: #e81919;
+}
+
+.pexea12-hv-loading {
+  margin: 10px;
+  text-align: center;
+  display: none;
+}
+
+.pexea12-hv-loading div {
+  border: 5px solid #f3f3f3;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border-top: 5px solid #555;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
