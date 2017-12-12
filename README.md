@@ -6,6 +6,8 @@
 
 ## How to use
 
+![HanViet manual](https://media.giphy.com/media/3o6fIUeVlOtuzBJ1yU/giphy.gif)
+
 ## Chrome Store
 
 ## Credit
