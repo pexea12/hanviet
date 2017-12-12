@@ -1,14 +1,18 @@
 .pexea12-hv-container {
   position:fixed; 
   width: 200px; 
-  z-index: 1000; 
+  z-index: 1000000; 
   background-color: #d2d2d1; 
   right: 0; 
   top: 10px;
-  color: #090950
+  color: #090950;
+  border-radius: 5px;
+  padding-bottom: 5px;
+  display: none;
 }
 
 .pexea12-hv-letter {
+  margin: 40px 0px;
   font-size: 50px;
   text-align: center;
 }
@@ -29,4 +33,21 @@
 
 .pexea12-hv-strokes {
   text-align: center;
+}
+
+.pexea12-hv-cancel {
+  text-align: center;
+}
+
+.pexea12-hv-cancel a {
+  background-color: #f94040;
+  display: inline-block;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.pexea12-hv-cancel a:hover {
+  background-color: #e81919;
 }
