@@ -16,7 +16,7 @@
 }
 
 .pexea12-hv-letter {
-  margin: 40px 0px;
+  margin: 30px 0px;
   font-size: 50px;
   text-align: center;
 }
@@ -41,6 +41,7 @@
 
 .pexea12-hv-cancel {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .pexea12-hv-cancel a {
