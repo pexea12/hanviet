@@ -6,7 +6,7 @@
 
 ## How to use
 
-![HanViet manual](https://media.giphy.com/media/3o6fIUeVlOtuzBJ1yU/giphy.gif)
+<img src="https://media.giphy.com/media/3o6fIUeVlOtuzBJ1yU/giphy.gif" alt="HanViet manual" style="width: 200px;"/>
 
 ## Chrome Store
 
