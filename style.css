@@ -1,14 +1,18 @@
 .pexea12-hv-container {
-  position:fixed; 
-  width: 200px; 
-  z-index: 1000000; 
-  background-color: #d2d2d1; 
-  right: 0; 
+  position:fixed;
+  width: 200px;
+  z-index: 1000000;
+  background-color: #d2d2d1;
+  right: 0;
   top: 10px;
   color: #090950;
   border-radius: 5px;
   padding-bottom: 5px;
   display: none;
+}
+
+#pexea12-hv-strokes {
+  text-align: center;
 }
 
 .pexea12-hv-content {
@@ -33,10 +37,6 @@
 
 .pexea12-hv-pronunciation span {
   font-weight: bold;
-}
-
-.pexea12-hv-strokes {
-  text-align: center;
 }
 
 .pexea12-hv-cancel {

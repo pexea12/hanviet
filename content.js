@@ -7,7 +7,7 @@ const createTemplate = () => {
       <div class="pexea12-hv-content">
         <p class="pexea12-hv-letter"></p>
         <p class="pexea12-hv-pronunciation">
-          <span>Pinyin:</span> 
+          <span>Pinyin:</span>
           <span class="pexea12-hv-pinyin"></span>
         </p>
         <p class="pexea12-hv-pronunciation">
@@ -15,9 +15,8 @@ const createTemplate = () => {
           <span class="pexea12-hv-sinoviet"></span>
         </p>
         <p class="pexea12-hv-meaning"></p>
-        <p class="pexea12-hv-strokes">
-          <img src="">
-        </p>
+        <div id="pexea12-hv-strokes">
+        </div>
       </div>
       <div class="pexea12-hv-cancel">
         <a>Close</a>
@@ -37,12 +36,12 @@ const button = container.querySelector('.pexea12-hv-cancel')
 const loading = container.querySelector('.pexea12-hv-loading')
 const content = container.querySelector('.pexea12-hv-content')
 
-const setTemplate = ({ letter, pinyin, sinoViet, strokeImage, meaning }) => {
-  container.querySelector('.pexea12-hv-letter').innerText = letter 
+const setTemplate = ({ letter, pinyin, sinoViet, meaning }) => {
+  container.querySelector('.pexea12-hv-letter').innerText = letter
   container.querySelector('.pexea12-hv-pinyin').innerText = pinyin.join(', ')
   container.querySelector('.pexea12-hv-sinoviet').innerText = sinoViet.join(', ')
   container.querySelector('.pexea12-hv-meaning').innerHTML = meaning.replace(/\n/g, '<br/>')
-  container.querySelector('.pexea12-hv-strokes img').src = strokeImage
+  container.querySelector('#pexea12-hv-strokes').innerHTML = ''
 }
 
 
@@ -62,10 +61,21 @@ document.addEventListener('mouseup', () => {
   if (text.length === 1 && text[0] >= '\u3400' && text[0] <= '\u9FBF') {
     container.style.display = 'block'
 
-    toggleLoading()
+    toggleLoading(true)
     chrome.runtime.sendMessage({ text }, (res) => {
       toggleLoading(false)
       setTemplate(res)
+
+      const writer = HanziWriter.create('pexea12-hv-strokes', text, {
+        width: 100,
+        height: 100,
+        padding: 5,
+        showOutline: true,
+        radicalColor: '#168F16',
+        delayBetweenLoops: 2500,
+      })
+
+      writer.loopCharacterAnimation()
     })
   }
 })

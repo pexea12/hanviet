@@ -2,13 +2,16 @@
   "manifest_version": 2,
   "name": "HanViet",
   "description": "Search for the Vietnamese meaning, pinyin, Sino-Vietnamese sound and stroke order of a Chinese character",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "content_scripts": [
     {
       "matches": [
         "<all_urls>"
       ],
-      "js": ["content.js"],
+      "js": [
+        "./node_modules/hanzi-writer/dist/hanzi-writer.js",
+        "content.js"
+      ],
       "css": ["style.css"]
     }
   ],
