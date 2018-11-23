@@ -28,8 +28,10 @@ const createTemplate = () => {
 }
 
 
-const popup = createTemplate()
-document.body.innerHTML += popup
+const popupElement = document.createElement('template')
+popupElement.innerHTML = createTemplate()
+
+document.body.appendChild(popupElement.content.childNodes[1])
 
 const container = document.querySelector('.pexea12-hv-container')
 const button = container.querySelector('.pexea12-hv-cancel')

@@ -9,7 +9,7 @@
         "<all_urls>"
       ],
       "js": [
-        "./node_modules/hanzi-writer/dist/hanzi-writer.js",
+        "./node_modules/hanzi-writer/dist/hanzi-writer.min.js",
         "content.js"
       ],
       "css": ["style.css"]
