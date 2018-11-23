@@ -1,8 +1,12 @@
 {
   "manifest_version": 2,
   "name": "HanViet",
+  "short_name": "HanViet",
   "description": "Search for the Vietnamese meaning, pinyin, Sino-Vietnamese sound and stroke order of a Chinese character",
-  "version": "0.2.0",
+  "version": "0.3.0",
+  "permissions": [
+    "activeTab"
+  ],
   "content_scripts": [
     {
       "matches": [
@@ -19,12 +23,18 @@
     "scripts": ["background.js"]
   },
   "browser_action": {
-    "default_icon": "icon128.png",
+    "default_icon": "images/512.png",
     "default_popup": "popup.html"
   },
   "icons": {
-    "128": "icon128.png",
-    "32": "icon32.png"
+    "128": "images/128.png",
+    "32": "images/32.png",
+    "48": "images/48.png",
+    "72": "images/72.png",
+    "96": "images/96.png",
+    "144": "images/144.png",
+    "192": "images/192.png",
+    "512": "images/512.png"
   },
   "homepage_url": "https://github.com/pexea12/hanviet"
 }
