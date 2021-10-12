@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-hanzi-writer@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/hanzi-writer/-/hanzi-writer-1.2.0.tgz#c7fd691fa7ee5d2696948533a74061588d5b5daf"
-  integrity sha512-f4IRiBXRkHKTCFbNMPPhubkRxyfh51ziZ7cnoooEJo95okx7rtPnNBIDqmENbeeaXphyfl7uG1yUg0dnBNzisA==
+hanzi-writer@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/hanzi-writer/-/hanzi-writer-3.3.0.tgz#13e0da50e127d98ff870f017a8330eefe289398f"
+  integrity sha512-YDCDGoglK89D7AIbC+yc8jz4R3iRAH1gMHs3MTHsIJzexh7/WL0Fzk2Agy4kbbhhZz7097az8MGCzX7XK/Ei8A==

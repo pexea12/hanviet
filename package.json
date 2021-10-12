@@ -2,6 +2,6 @@
   "name": "HanViet",
   "description": "Search for the Vietnamese meaning, pinyin, Sino-Vietnamese sound and stroke order of a Chinese character",
   "dependencies": {
-    "hanzi-writer": "^1.2.0"
+    "hanzi-writer": "^3.3.0"
   }
 }
